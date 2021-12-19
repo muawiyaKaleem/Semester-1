@@ -1,0 +1,4 @@
+Order Bill = 800
+Tax = 40
+Service Charges = 80
+Total Bill = 920
