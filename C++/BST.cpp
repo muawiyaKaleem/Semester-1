@@ -132,9 +132,7 @@ int main()
     Node Tree(0);
     Node* root = NULL;
     //Number of nodes to be inserted
-    int t;
-    
-    cout<<"Must Enter 5 and 69 in the list to check delete and search function\n\n";
+    int t,del,search;
     
     for(int i=1; i<=10; i++)
 	{
@@ -148,12 +146,24 @@ int main()
 	Tree.inorder(root);
 	
 	//deleting a value, in this case deleted value is 5, (list me5 ho ga to delete ho ga warna nahi)
-	Tree.deletenode(root,5);
-	cout<<"\n\nNew Tree after Deleting 5 => ";
+	cout<<endl<<"What Number You want to Delete from the tree => ";
+	cin>>del;
+	Tree.deletenode(root,del);
+	cout<<"\n\nNew Tree after Deleting "<<del<<" => ";
 	Tree.inorder(root);
 	    	
 //searching a value from the tree,in this case searched value is 69, (list me 69 ho ga to delete ho ga warna nahi)
-    Node* d = Tree.search(root,69);
-	cout<<"\n\nSearching 69 => "<<d->data; 
+    cout<<endl<<"Enter the number you want to search => ";
+    cin>>search;
+	Node* d = Tree.search(root,search);
+	if (search==d->data)
+	{
+		cout<<endl<<search<<" is in the Tree"; 	
+	}
+	else if (search!=d->data)
+	{
+		cout<<endl<<search<<" is not in the Tree";
+	}
+	
     return 0;
 }
